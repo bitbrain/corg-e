@@ -138,7 +138,7 @@ material = SubResource( 2 )
 position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
 hframes = 16
-frame = 3
+frame = 1
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.348643, 0.348643 )
