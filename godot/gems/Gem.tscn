@@ -1,16 +1,31 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gems/gems.png" type="Texture" id=1]
 [ext_resource path="res://lighting/light.png" type="Texture" id=2]
+[ext_resource path="res://gems/Gem.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 41.3017
 
 [node name="Gem" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
 hframes = 4
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0.423683, -0.423637 )
-scale = Vector2( 0.56739, 0.56739 )
+scale = Vector2( 0.348643, 0.348643 )
 texture = ExtResource( 2 )
 color = Color( 1, 0, 0.470588, 1 )
+energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FollowRadius" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Gem_body_entered"]

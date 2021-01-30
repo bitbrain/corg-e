@@ -98,8 +98,20 @@ smoothing_speed = 3.0
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Gem" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( -88.8506, -58.9539 )
+[node name="BassGem" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 192.607, -109.465 )
+
+[node name="TenorGem" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -153.112, -176.532 )
+type = 1
+
+[node name="AltoGem" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -253.291, 68.4455 )
+type = 2
+
+[node name="SopranoGem" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 181.382, 78.8283 )
+type = 3
 
 [node name="Hut" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 42.8811, -157.528 )
@@ -148,8 +160,17 @@ position = Vector2( -66.8467, -123.442 )
 color = Color( 0.447059, 0.415686, 0.796078, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 4.98412, -2.88097 )
-scale = Vector2( 1.44593, 1.37557 )
+position = Vector2( 98.2719, -125.341 )
+scale = Vector2( 0.636624, 0.607696 )
+texture = ExtResource( 7 )
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( -5.0258, -127.99 )
+scale = Vector2( 0.636624, 0.607696 )
 texture = ExtResource( 7 )
 mode = 2
 __meta__ = {
