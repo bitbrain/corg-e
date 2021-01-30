@@ -21,6 +21,7 @@ onready var gem_slot_position = $GemSlotPosition.global_position
 onready var animation_player = $TotemActivationPlayer
 onready var activation_line_sprite = $YSort/Sprite/ActivationLineSprite
 onready var face_sprite = $FaceActivationSprite
+onready var insert_gem_sound = $InsertGemSound
 
 var gem:Gem = null
 
@@ -42,6 +43,7 @@ func _physics_process(delta):
 			sleeping = false
 			activation_line_sprite.visible = true
 			face_sprite.visible = true
+			insert_gem_sound.play()
 			# TODO select animation based on type
 			animation_player.play("ActivateTotem" + ANIMATION_EXTENSIONS[type])
 		else:

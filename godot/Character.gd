@@ -10,6 +10,8 @@ enum {
 }
 
 onready var engine_sound = $EngineSound
+onready var animation_tree = $AnimationTree
+onready var animation_state = animation_tree.get("parameters/playback")
 
 var velocity = Vector2.ZERO
 var state = MOVE
@@ -37,3 +39,5 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
 	engine_sound.pitch_scale = velocity.length() / 10
+	animation_tree.set("parameters/Idle/blend_position", velocity.normalized())
+	animation_state.travel("Idle")
