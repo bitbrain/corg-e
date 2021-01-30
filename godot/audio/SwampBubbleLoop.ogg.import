@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SwampBubbleLoop.ogg-474fe54151176dbe568ddcbd476ca49f.oggstr"
+
+[deps]
+
+source_file="res://audio/SwampBubbleLoop.ogg"
+dest_files=[ "res://.import/SwampBubbleLoop.ogg-474fe54151176dbe568ddcbd476ca49f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

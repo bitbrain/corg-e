@@ -9,6 +9,8 @@ enum {
 	MOVE
 }
 
+onready var engine_sound = $EngineSound
+
 var velocity = Vector2.ZERO
 var state = MOVE
 var default_speed = 1
@@ -24,7 +26,14 @@ func move_state(delta):
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
 	if input_vector != Vector2.ZERO:
+		if !engine_sound.playing:
+			engine_sound.play()
+		engine_sound.volume_db /= 1.05
+		engine_sound.volume_db = clamp(engine_sound.volume_db, -50, -36)
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
+		engine_sound.volume_db *= 1.05
+		engine_sound.volume_db = clamp(engine_sound.volume_db, -50, -36)
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
+	engine_sound.pitch_scale = velocity.length() / 10
