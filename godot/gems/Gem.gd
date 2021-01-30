@@ -16,11 +16,15 @@ const LIGHT_COLOURS = [
 	"ff5649", #ALTO
 	"59dfff"  # SOPRANO
 	]
+const ANIMATION_EXTENSIONS = [
+	"Bass", "Tenor", "Alto", "Soprano"
+]
 
 export(Type) var type = Type.BASS
 
 onready var sprite = $Sprite
 onready var light = $Light2D
+onready var animation_player = $AnimationPlayer
 
 var body : Node2D = null
 var totem = null
@@ -28,6 +32,7 @@ var totem = null
 func _ready():
 	sprite.frame = type
 	light.color = Color(LIGHT_COLOURS[type])
+	animation_player.play(ANIMATION_EXTENSIONS[type] + "Gem")
 
 func _physics_process(delta):
 	# follow the body if no totem is attached
