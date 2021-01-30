@@ -26,4 +26,5 @@ onready var light = $Light2D
 
 func _ready():
 	animation_player.play(ANIMATION_EXTENSIONS[type] + "Idle")
+	animation_player.advance(randf())
 	light.color = Color(LIGHT_COLOURS[type])	
