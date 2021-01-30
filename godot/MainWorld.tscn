@@ -98,21 +98,6 @@ smoothing_speed = 3.0
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="BassGem" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 192.607, -109.465 )
-
-[node name="TenorGem" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( -153.112, -176.532 )
-type = 1
-
-[node name="AltoGem" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( -253.291, 68.4455 )
-type = 2
-
-[node name="SopranoGem" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 181.382, 78.8283 )
-type = 3
-
 [node name="Hut" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 42.8811, -157.528 )
 scale = Vector2( 1.44593, 1.37557 )
@@ -123,38 +108,56 @@ position = Vector2( 10.908, -44.991 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Robot"]
 remote_path = NodePath("../../../Camera2D")
 
-[node name="BassAlien" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -114.317, 74.9978 )
+[node name="Totems" type="YSort" parent="YSort"]
 
-[node name="BassTotem" parent="YSort" instance=ExtResource( 5 )]
+[node name="BassTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
 position = Vector2( -127.284, 63.6087 )
 
-[node name="TenorAlien" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -19.5997, 117.376 )
-
-[node name="Sprite" parent="YSort/TenorAlien" index="0"]
-frame = 1
-
-[node name="TenorTotem" parent="YSort" instance=ExtResource( 5 )]
+[node name="TenorTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
 position = Vector2( -8.93262, 101.281 )
+type = 1
 
-[node name="AltoAlien" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 60.7802, 8.18222 )
-
-[node name="Sprite" parent="YSort/AltoAlien" index="0"]
-frame = 2
-
-[node name="AltoTotem" parent="YSort" instance=ExtResource( 5 )]
+[node name="AltoTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
 position = Vector2( 77.7073, -10.3039 )
+type = 2
 
-[node name="SopranoAlien" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -4.01834, -151.084 )
-
-[node name="Sprite" parent="YSort/SopranoAlien" index="0"]
-frame = 3
-
-[node name="SopranoTotem" parent="YSort" instance=ExtResource( 5 )]
+[node name="SopranoTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
 position = Vector2( -66.8467, -123.442 )
+type = 3
+
+[node name="Gems" type="YSort" parent="YSort"]
+
+[node name="BassGem" parent="YSort/Gems" instance=ExtResource( 9 )]
+position = Vector2( 192.607, -109.465 )
+
+[node name="TenorGem" parent="YSort/Gems" instance=ExtResource( 9 )]
+position = Vector2( -153.112, -176.532 )
+type = 1
+
+[node name="AltoGem" parent="YSort/Gems" instance=ExtResource( 9 )]
+position = Vector2( -253.291, 68.4455 )
+type = 2
+
+[node name="SopranoGem" parent="YSort/Gems" instance=ExtResource( 9 )]
+position = Vector2( 181.382, 78.8283 )
+type = 3
+
+[node name="Aliens" type="YSort" parent="YSort"]
+
+[node name="TenorAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+position = Vector2( -19.5997, 117.376 )
+type = 1
+
+[node name="BassAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+position = Vector2( -114.317, 74.9978 )
+
+[node name="AltoAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+position = Vector2( 60.7802, 8.18222 )
+type = 2
+
+[node name="SopranoAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+position = Vector2( -4.01834, -151.084 )
+type = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.447059, 0.415686, 0.796078, 1 )
@@ -176,11 +179,3 @@ mode = 2
 __meta__ = {
 "_edit_lock_": true
 }
-
-[editable path="YSort/BassAlien"]
-
-[editable path="YSort/TenorAlien"]
-
-[editable path="YSort/AltoAlien"]
-
-[editable path="YSort/SopranoAlien"]

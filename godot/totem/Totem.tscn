@@ -1,20 +1,51 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://totem/totem.png" type="Texture" id=1]
+[ext_resource path="res://totem/Totem.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.38885
 height = 9.772
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 32.3001
+
 [node name="Totem" type="StaticBody2D"]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Sprite" type="Sprite" parent="YSort"]
 position = Vector2( 0, -46.4381 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111359, 1.00226 )
 rotation = 1.5708
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GemDetectionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GemDetectionArea"]
+position = Vector2( 0.0701599, 0 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GemSlotPosition" type="Position2D" parent="."]
+position = Vector2( 0, -9 )
+[connection signal="area_entered" from="GemDetectionArea" to="." method="_on_GemDetectionArea_area_entered"]

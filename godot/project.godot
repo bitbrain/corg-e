@@ -10,12 +10,30 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Alien",
+"language": "GDScript",
+"path": "res://alien/Alien.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
 "path": "res://Character.gd"
+}, {
+"base": "Area2D",
+"class": "Gem",
+"language": "GDScript",
+"path": "res://gems/Gem.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Totem",
+"language": "GDScript",
+"path": "res://totem/Totem.gd"
 } ]
 _global_script_class_icons={
-"Character": ""
+"Alien": "",
+"Character": "",
+"Gem": "",
+"Totem": ""
 }
 
 [application]
