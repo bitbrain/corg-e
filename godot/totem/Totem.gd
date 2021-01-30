@@ -2,6 +2,9 @@ class_name Totem
 extends StaticBody2D
 
 const MIN_GEM_DISTANCE = 3
+const ANIMATION_EXTENSIONS = [
+	"Bass", "Tenor", "Alto", "Soprano"
+]
 
 enum Type {
 	BASS,
@@ -32,11 +35,15 @@ func _physics_process(delta):
 		if distance < MIN_GEM_DISTANCE:
 			# WAKE UP!
 			gem.global_position = gem_slot_position
+			if gem.material is CanvasItemMaterial:
+				var material = gem.material as CanvasItemMaterial
+				material.light_mode = CanvasItemMaterial.LIGHT_MODE_UNSHADED
+				gem.material = material
 			sleeping = false
 			activation_line_sprite.visible = true
 			face_sprite.visible = true
 			# TODO select animation based on type
-			animation_player.play("ActivateTotemBass")
+			animation_player.play("ActivateTotem" + ANIMATION_EXTENSIONS[type])
 		else:
 			gem.global_position = gem.global_position.move_toward(gem_slot_position, distance * delta)
 
@@ -55,4 +62,4 @@ func _on_GemDetectionArea_area_entered(area):
 		
 func _completely_woken_up():
 	# TODO select animation based on type
-	animation_player.play("SingingTotemBass")
+	animation_player.play("SingingTotem" + ANIMATION_EXTENSIONS[type])
