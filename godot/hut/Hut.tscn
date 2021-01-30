@@ -14,7 +14,7 @@ extents = Vector2( 17.8826, 3.80058 )
 [node name="Hut" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.472458, 2.28361 )
+position = Vector2( 0, -14 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
