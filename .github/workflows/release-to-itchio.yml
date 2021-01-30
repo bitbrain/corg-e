@@ -1,0 +1,81 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  release_windows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download Windows
+        id: download-windows
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: corge-windows.zip
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (Windows)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: windows
+          ITCH_GAME: corg-e
+          ITCH_USER: bitbrain
+          PACKAGE: corge-windows.zip
+          VERSION: ${{ steps.download-windows.outputs.version }}
+  release_macos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download MacOS
+        id: download-macos
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: corge-macos.zip
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (MacOS)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: mac
+          ITCH_GAME: corg-e
+          ITCH_USER: bitbrain
+          PACKAGE: corge-macos.zip
+          VERSION: ${{ steps.download-macos.outputs.version }}
+  release_linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download Linux
+        id: download-linux
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: corge-linux.zip
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (Linux)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: linux
+          ITCH_GAME: corg-e
+          ITCH_USER: bitbrain
+          PACKAGE: corge-linux.zip
+          VERSION: ${{ steps.download-linux.outputs.version }}
+  release_html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download HTML5
+        id: download-html
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: corge-html.zip
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (HTML5)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: html
+          ITCH_GAME: corg-e
+          ITCH_USER: bitbrain
+          PACKAGE: corge-html.zip
+          VERSION: ${{ steps.download-html.outputs.version }}
