@@ -29,7 +29,7 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.741176, 0.415686, 0.384314, 1 )
 text = "As the robot’s antenna retreats, it  starts driving off.. 
 
-ust before CORG-E gets out of sight, the little droid stops and looks back at the villagers celebrating."
+Just before CORG-E gets out of sight, the little droid stops and looks back at the villagers celebrating."
 align = 1
 valign = 1
 autowrap = true
