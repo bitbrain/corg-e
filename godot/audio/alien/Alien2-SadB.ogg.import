@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alien2-SadB.ogg-6e28d74e25e3070d33d4c12c14af7778.oggstr"
+
+[deps]
+
+source_file="res://audio/alien/Alien2-SadB.ogg"
+dest_files=[ "res://.import/Alien2-SadB.ogg-6e28d74e25e3070d33d4c12c14af7778.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

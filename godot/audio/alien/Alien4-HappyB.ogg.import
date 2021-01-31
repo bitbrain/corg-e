@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alien4-HappyB.ogg-d5c13df016a670b4cb34e523d2e0183a.oggstr"
+
+[deps]
+
+source_file="res://audio/alien/Alien4-HappyB.ogg"
+dest_files=[ "res://.import/Alien4-HappyB.ogg-d5c13df016a670b4cb34e523d2e0183a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
