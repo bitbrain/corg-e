@@ -389,3 +389,4 @@ bus = "Ambient"
 [connection signal="timeout" from="EmoteReactionTimer" to="." method="_on_EmoteReactionTimer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_exited"]
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_InteractionArea_body_entered"]
