@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://robot/robot.png" type="Texture" id=1]
 [ext_resource path="res://Character.gd" type="Script" id=2]
 [ext_resource path="res://audio/RobotMoveLoopGrass.ogg" type="AudioStream" id=3]
+[ext_resource path="res://lighting/light.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.23428
@@ -119,7 +120,7 @@ position = Vector2( 0, -4.75713 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 1 )
 hframes = 16
-frame = 8
+frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -140,3 +141,9 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 12 )
 parameters/Idle/blend_position = Vector2( -0.996219, 0 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.447507, 0.447507 )
+texture = ExtResource( 4 )
+texture_scale = 0.8
+color = Color( 0.309804, 0.643137, 0.721569, 1 )
