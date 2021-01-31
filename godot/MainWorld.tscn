@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://maps/grass.png" type="Texture" id=1]
 [ext_resource path="res://maps/swamp.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://gems/Gem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://audio/SwampAmbience.ogg" type="AudioStream" id=10]
 [ext_resource path="res://gameloop/GameFinishedDetector.tscn" type="PackedScene" id=11]
+[ext_resource path="res://audio/VillageTotemChant.ogg" type="AudioStream" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass.png 0"
@@ -145,7 +146,7 @@ type = 3
 position = Vector2( -246.161, -198.604 )
 
 [node name="TenorGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( -38.133, -238.689 )
+position = Vector2( -49.1573, -273.494 )
 type = 1
 
 [node name="AltoGem" parent="YSort/Gems" instance=ExtResource( 9 )]
@@ -201,4 +202,9 @@ __meta__ = {
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -30.0
+autoplay = true
+
+[node name="WelcomeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -5.0
 autoplay = true

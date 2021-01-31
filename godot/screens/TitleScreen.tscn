@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://corge-logo.png" type="Texture" id=1]
 [ext_resource path="res://ui/GameButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/small-ui-font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://alien/Alien.tscn" type="PackedScene" id=4]
 [ext_resource path="res://screens/TitleScreen.gd" type="Script" id=5]
+[ext_resource path="res://audio/SwampAmbience.ogg" type="AudioStream" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -111,7 +112,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer/CenterContainer/Image"]
 frames = SubResource( 17 )
-frame = 4
+frame = 6
 playing = true
 centered = false
 
@@ -162,4 +163,10 @@ margin_bottom = 46.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.298039, 0.407843, 0.521569, 1 )
 text = "game built in 48 hours for Global Game Jam 2021"
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -30.0
+autoplay = true
+bus = "Ambient"
 [connection signal="pressed" from="VBoxContainer/Buttons/GameButton" to="." method="_on_GameButton_pressed"]
