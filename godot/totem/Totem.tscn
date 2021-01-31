@@ -107,7 +107,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 2.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -197,7 +197,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 2.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -288,7 +288,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 2.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -379,7 +379,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 2.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -717,9 +717,8 @@ __meta__ = {
 [node name="ActivationLineSprite" type="Sprite" parent="YSort/Sprite"]
 visible = false
 material = SubResource( 1 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 hframes = 16
-frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111359, 1.00226 )
@@ -761,7 +760,6 @@ visible = false
 position = Vector2( 0, -46 )
 texture = ExtResource( 3 )
 hframes = 16
-frame = 9
 
 [node name="InsertGemSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
@@ -772,4 +770,6 @@ max_distance = 500.0
 max_distance = 1000.0
 attenuation = 2.82843
 bus = "Ambient"
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="area_entered" from="GemDetectionArea" to="." method="_on_GemDetectionArea_area_entered"]
