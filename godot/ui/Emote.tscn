@@ -4,10 +4,10 @@
 [ext_resource path="res://ui/Emote.gd" type="Script" id=2]
 [ext_resource path="res://emotes/emote-disappointed.png" type="Texture" id=3]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "disappointed"
 length = 1.6
 tracks/0/type = "value"
@@ -49,8 +49,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "happy"
+[sub_resource type="Animation" id=3]
 length = 1.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -100,13 +99,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 texture = ExtResource( 3 )
 hframes = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/disappointed = SubResource( 3 )
-anims/happy = SubResource( 1 )
+anims/disappointed = SubResource( 2 )
+anims/happy = SubResource( 3 )
 
 [node name="DeletionTween" type="Tween" parent="."]
 [connection signal="tween_all_completed" from="DeletionTween" to="." method="_on_DeletionTween_tween_all_completed"]

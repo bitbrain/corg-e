@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/VillageTotemCharge.ogg-cd23ef02464b9c0283f5b9ff60675b0b.oggstr"
+
+[deps]
+
+source_file="res://audio/VillageTotemCharge.ogg"
+dest_files=[ "res://.import/VillageTotemCharge.ogg-cd23ef02464b9c0283f5b9ff60675b0b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

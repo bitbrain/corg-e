@@ -111,7 +111,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer/CenterContainer/Image"]
 frames = SubResource( 17 )
-frame = 5
+frame = 4
 playing = true
 centered = false
 
