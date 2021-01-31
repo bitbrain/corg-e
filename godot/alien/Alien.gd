@@ -68,10 +68,10 @@ func _ready():
 func _on_totem_woken_up():
 	$EmoteReactionTimer.start()
 	
-func emote(type):
+func emote(type,gem=-1):
 	var sounds = SOUNDS[type]
 	sounds[self.type].play()
-	emote.play(type, self.type)
+	emote.play(type, gem)
 
 func _on_InteractionArea_area_entered(area):
 	if area is Gem and area.type != type and !entered_gems.has(area) and !cheered_up:
@@ -89,4 +89,4 @@ func _on_EmoteReactionTimer_timeout():
 
 func _on_InteractionArea_body_entered(body):
 	if body is Robot and !cheered_up:
-		emote(Emote.Type.SAD)
+		emote(Emote.Type.SAD, self.type)
