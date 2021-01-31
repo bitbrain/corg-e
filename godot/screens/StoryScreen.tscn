@@ -20,9 +20,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="CenterContainer"]
 margin_left = 66.0
-margin_top = 43.0
+margin_top = 31.0
 margin_right = 266.0
-margin_bottom = 148.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 200, 100 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.741176, 0.415686, 0.384314, 1 )
@@ -30,7 +30,7 @@ text = "2505: Humanity starts mission to explore space.
 
 Autonomous research ships are sent into space, all equipped with an Explorer robot, called CORG-E. These robots are shot onto a planet’s surface, with the sole purpose to explore the planet and gather as much data as possible.
 
-Go little robot, fulfill your mission!"
+Go little robot, fulfill your mission! Find the gems and bring them back to the village to restore the mood of its inhabitants."
 align = 1
 valign = 1
 autowrap = true

@@ -120,7 +120,6 @@ position = Vector2( 0, -4.75713 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 1 )
 hframes = 16
-frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

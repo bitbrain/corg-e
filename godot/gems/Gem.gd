@@ -2,7 +2,6 @@ class_name Gem
 extends Area2D
 
 signal on_gem_pickup(gem)
-signal on_gem_inserted(gem)
 
 enum Type {
 	BASS,
@@ -49,7 +48,6 @@ func _physics_process(delta):
 func assign_totem(totem):
 	self.body = null
 	self.totem = totem
-	emit_signal("on_gem_inserted", self)
 	
 func _on_Gem_body_entered(body):
 	if self.body == null:

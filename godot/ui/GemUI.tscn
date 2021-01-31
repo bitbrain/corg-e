@@ -306,7 +306,7 @@ size_flags_vertical = 0
 position = Vector2( -8, -8 )
 frames = SubResource( 17 )
 animation = "soprano"
-frame = 12
+frame = 13
 playing = true
 centered = false
 
