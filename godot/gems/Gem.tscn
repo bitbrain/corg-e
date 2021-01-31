@@ -128,7 +128,9 @@ tracks/1/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[node name="Gem" type="Area2D"]
+[node name="Gem" type="Area2D" groups=[
+"Gems",
+]]
 collision_layer = 4
 collision_mask = 4
 script = ExtResource( 3 )

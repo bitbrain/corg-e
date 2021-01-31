@@ -1,6 +1,8 @@
 class_name Gem
 extends Area2D
 
+signal on_gem_pickup(gem)
+
 enum Type {
 	BASS,
 	TENOR,
@@ -20,6 +22,7 @@ const ANIMATION_EXTENSIONS = [
 	"Bass", "Tenor", "Alto", "Soprano"
 ]
 
+export(String) var gem_name = "Gem"
 export(Type) var type = Type.BASS
 
 onready var sprite = $Sprite
@@ -47,4 +50,6 @@ func assign_totem(totem):
 	self.totem = totem
 	
 func _on_Gem_body_entered(body):
+	if self.body == null:
+		emit_signal("on_gem_pickup", self)
 	self.body = body as Node2D
