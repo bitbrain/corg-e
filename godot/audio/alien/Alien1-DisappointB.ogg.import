@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Alien1-DisappointB.ogg-883c7206598d833ef721d612562ea
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
