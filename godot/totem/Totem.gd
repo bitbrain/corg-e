@@ -32,6 +32,7 @@ onready var activation_line_sprite = $YSort/Sprite/ActivationLineSprite
 onready var face_sprite = $FaceActivationSprite
 onready var insert_gem_sound = $InsertGemSound
 onready var totem_sound = $TotemTuneSound
+onready var totem_wakeup_sound = $TotemWakeupSound
 onready var tween = $Tween
 
 var gem:Gem = null
@@ -80,6 +81,7 @@ func _get_song_position() -> float:
 		
 func _completely_woken_up():
 	# TODO select animation based on type
+	totem_wakeup_sound.play()
 	animation_player.play("SingingTotem" + ANIMATION_EXTENSIONS[type])
 	totem_sound.stream = TOTEM_SOUND_MAPPING[type]
 	totem_sound.volume_db = -60
