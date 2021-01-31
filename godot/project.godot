@@ -51,13 +51,13 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=331
-window/size/height=184
+window/size/width=332
+window/size/height=192
 window/size/test_width=1920
 window/size/test_height=1080
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="keep_height"
 
 [importer_defaults]
 
