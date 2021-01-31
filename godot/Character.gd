@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 export var ACCELERATION = 500
 export var FRICTION = 140
-export var MAX_SPEED = 70
+export var MAX_SPEED = 140
 
 enum {
 	MOVE

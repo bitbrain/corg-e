@@ -8,7 +8,7 @@
 radius = 5.23428
 height = 2.61086
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "IdleLeft"
 length = 3.2
 loop = true
@@ -38,8 +38,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "IdleRight"
+[sub_resource type="Animation" id=3]
 length = 3.2
 loop = true
 step = 0.2
@@ -68,47 +67,47 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "IdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "IdleRight"
 
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "IdleRight"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
-animation = "IdleRight"
-
-[sub_resource type="AnimationNodeAnimation" id=10]
-animation = "IdleRight"
-
-[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "IdleLeft"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=12]
-blend_point_0/node = SubResource( 6 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=10]
+blend_point_0/node = SubResource( 4 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 7 )
+blend_point_1/node = SubResource( 5 )
 blend_point_1/pos = Vector2( -0.1, -1.1 )
-blend_point_2/node = SubResource( 8 )
+blend_point_2/node = SubResource( 6 )
 blend_point_2/pos = Vector2( 0.1, -1.1 )
-blend_point_3/node = SubResource( 9 )
+blend_point_3/node = SubResource( 7 )
 blend_point_3/pos = Vector2( 1, 0 )
-blend_point_4/node = SubResource( 10 )
+blend_point_4/node = SubResource( 8 )
 blend_point_4/pos = Vector2( 0.1, 1.1 )
-blend_point_5/node = SubResource( 11 )
+blend_point_5/node = SubResource( 9 )
 blend_point_5/pos = Vector2( -0.1, 1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachine" id=4]
-states/Idle/node = SubResource( 12 )
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Idle/node = SubResource( 10 )
 states/Idle/position = Vector2( 276.5, 93 )
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Robot" type="KinematicBody2D"]
 collision_layer = 7
@@ -120,6 +119,7 @@ position = Vector2( 0, -4.75713 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 1 )
 hframes = 16
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -131,12 +131,12 @@ volume_db = -30.0
 pitch_scale = 5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/IdleLeft = SubResource( 3 )
-anims/IdleRight = SubResource( 2 )
+anims/IdleLeft = SubResource( 2 )
+anims/IdleRight = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 4 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 5 )
+parameters/playback = SubResource( 12 )
 parameters/Idle/blend_position = Vector2( -0.996219, 0 )

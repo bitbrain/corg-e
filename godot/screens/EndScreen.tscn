@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/small-ui-font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://screens/EndScreen.gd" type="Script" id=2]
+[ext_resource path="res://audio/title.ogg" type="AudioStream" id=3]
+
+[node name="Outro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 66.0
+margin_top = 46.0
+margin_right = 266.0
+margin_bottom = 146.0
+rect_min_size = Vector2( 200, 100 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.741176, 0.415686, 0.384314, 1 )
+text = "As the robot’s antenna retreats, it  starts driving off.. 
+
+ust before CORG-E gets out of sight, the little droid stops and looks back at the villagers celebrating."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true

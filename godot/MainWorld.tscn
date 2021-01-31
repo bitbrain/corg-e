@@ -20,7 +20,7 @@ script = ExtResource( 3 )
 
 [node name="Background" type="Sprite" parent="."]
 visible = false
-position = Vector2( -4.19391, -42.8673 )
+position = Vector2( 10.908, -44.991 )
 scale = Vector2( 33.3867, 21.1311 )
 texture = ExtResource( 2 )
 
@@ -70,54 +70,62 @@ update_scale = false
 [node name="Totems" type="YSort" parent="YSort"]
 
 [node name="BassTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
+pause_mode = 2
 position = Vector2( -122.527, -11.014 )
 
 [node name="TenorTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
+pause_mode = 2
 position = Vector2( -20.5274, 48.064 )
 type = 1
 
 [node name="AltoTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
+pause_mode = 2
 position = Vector2( 39.3554, -64.4128 )
 type = 2
 
 [node name="SopranoTotem" parent="YSort/Totems" instance=ExtResource( 5 )]
+pause_mode = 2
 position = Vector2( -66.8467, -123.442 )
 type = 3
 
 [node name="Gems" type="YSort" parent="YSort"]
 
 [node name="BassGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( -1086.64, -139.402 )
+position = Vector2( -63.0193, -43.3623 )
 
 [node name="TenorGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( 1343.82, -480.027 )
+position = Vector2( -20.8983, -82.6333 )
 type = 1
 
 [node name="AltoGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( 787.729, 1049.64 )
+position = Vector2( -12.7163, -49.2062 )
 type = 2
 
 [node name="SopranoGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( 1009.97, -1033.43 )
+position = Vector2( -71.9033, -67.5232 )
 type = 3
 
 [node name="Aliens" type="YSort" parent="YSort"]
 
 [node name="TenorAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+pause_mode = 2
 position = Vector2( -2.64828, 24.673 )
 totem_path = NodePath("../../Totems/TenorTotem")
 type = 1
 
 [node name="BassAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+pause_mode = 2
 position = Vector2( -154.75, -7.05748 )
 totem_path = NodePath("../../Totems/BassTotem")
 
 [node name="AltoAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+pause_mode = 2
 position = Vector2( 69.8181, -64.2081 )
 totem_path = NodePath("../../Totems/AltoTotem")
 type = 2
 
 [node name="SopranoAlien" parent="YSort/Aliens" instance=ExtResource( 4 )]
+pause_mode = 2
 position = Vector2( -4.01834, -151.084 )
 totem_path = NodePath("../../Totems/SopranoTotem")
 type = 3
@@ -144,6 +152,7 @@ __meta__ = {
 }
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 10 )
 volume_db = -30.0
 autoplay = true
@@ -152,4 +161,21 @@ autoplay = true
 stream = ExtResource( 12 )
 volume_db = -5.0
 autoplay = true
+
+[node name="GameCompleteTween" type="Tween" parent="."]
+pause_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_left = -358.0
+margin_top = -259.0
+margin_right = 506.0
+margin_bottom = 226.0
+color = Color( 0.168627, 0.168627, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_finished" from="GameFinishedDetector" to="." method="_on_GameFinishedDetector_game_finished"]
+[connection signal="tween_all_completed" from="GameCompleteTween" to="." method="_on_GameCompleteTween_tween_all_completed"]
