@@ -46,8 +46,12 @@ _global_script_class_icons={
 
 config/name="CORG-E"
 config/description="A small robot is looking for happiness."
-run/main_scene="res://MainWorld.tscn"
+run/main_scene="res://screens/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 
@@ -125,4 +129,5 @@ ui_down={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.168627, 0.168627, 0.270588, 1 )
 environment/default_environment="res://default_env.tres"
