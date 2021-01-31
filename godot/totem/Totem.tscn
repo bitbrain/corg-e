@@ -14,17 +14,17 @@
 [ext_resource path="res://totem/totem-tenor-singing.png" type="Texture" id=12]
 [ext_resource path="res://audio/VillageTotemGemInsert.ogg" type="AudioStream" id=13]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 6.38885
 height = 9.772
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 32.3001
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "ActivateTotemAlto"
 length = 3.2
 step = 0.2
@@ -115,8 +115,7 @@ tracks/6/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "ActivateTotemBass"
+[sub_resource type="Animation" id=5]
 length = 3.2
 step = 0.2
 tracks/0/type = "value"
@@ -206,7 +205,7 @@ tracks/6/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "ActivateTotemSoprano"
 length = 3.2
 step = 0.2
@@ -297,7 +296,7 @@ tracks/6/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "ActivateTotemTenor"
 length = 3.2
 step = 0.2
@@ -388,7 +387,7 @@ tracks/6/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "SingingTotemAlto"
 length = 0.6
 loop = true
@@ -466,8 +465,7 @@ tracks/5/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "SingingTotemBass"
+[sub_resource type="Animation" id=9]
 length = 0.6
 loop = true
 step = 0.2
@@ -700,7 +698,9 @@ tracks/5/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[node name="Totem" type="StaticBody2D"]
+[node name="Totem" type="StaticBody2D" groups=[
+"totems",
+]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 2 )
@@ -716,7 +716,7 @@ __meta__ = {
 
 [node name="ActivationLineSprite" type="Sprite" parent="YSort/Sprite"]
 visible = false
-material = SubResource( 4 )
+material = SubResource( 1 )
 texture = ExtResource( 8 )
 hframes = 16
 frame = 9
@@ -724,7 +724,7 @@ frame = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111359, 1.00226 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -738,7 +738,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GemDetectionArea"]
 position = Vector2( 0.0701599, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -747,12 +747,12 @@ __meta__ = {
 position = Vector2( 0, -7 )
 
 [node name="TotemActivationPlayer" type="AnimationPlayer" parent="."]
-anims/ActivateTotemAlto = SubResource( 6 )
-anims/ActivateTotemBass = SubResource( 3 )
-anims/ActivateTotemSoprano = SubResource( 7 )
-anims/ActivateTotemTenor = SubResource( 8 )
-anims/SingingTotemAlto = SubResource( 9 )
-anims/SingingTotemBass = SubResource( 5 )
+anims/ActivateTotemAlto = SubResource( 4 )
+anims/ActivateTotemBass = SubResource( 5 )
+anims/ActivateTotemSoprano = SubResource( 6 )
+anims/ActivateTotemTenor = SubResource( 7 )
+anims/SingingTotemAlto = SubResource( 8 )
+anims/SingingTotemBass = SubResource( 9 )
 anims/SingingTotemSoprano = SubResource( 10 )
 anims/SingingTotemTenor = SubResource( 11 )
 
@@ -767,4 +767,9 @@ frame = 9
 stream = ExtResource( 13 )
 volume_db = -5.0
 max_distance = 500.0
+
+[node name="TotemTuneSound" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1000.0
+attenuation = 2.82843
+bus = "Ambient"
 [connection signal="area_entered" from="GemDetectionArea" to="." method="_on_GemDetectionArea_area_entered"]

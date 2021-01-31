@@ -1,6 +1,8 @@
 class_name Totem
 extends StaticBody2D
 
+signal completely_woken_up
+
 const MIN_GEM_DISTANCE = 3
 const ANIMATION_EXTENSIONS = [
 	"Bass", "Tenor", "Alto", "Soprano"
@@ -13,6 +15,13 @@ enum Type {
 	SOPRANO
 }
 
+onready var TOTEM_SOUND_MAPPING = {
+	Type.BASS: load("res://audio/bgm_2.ogg"),
+	Type.TENOR: load("res://audio/bgm_1.ogg"),
+	Type.ALTO: load("res://audio/bgm_3.ogg"),
+	Type.SOPRANO: load("res://audio/bgm_4.ogg")
+}
+
 export(Type) var type = Type.BASS
 
 onready var ysort = $YSort
@@ -22,6 +31,7 @@ onready var animation_player = $TotemActivationPlayer
 onready var activation_line_sprite = $YSort/Sprite/ActivationLineSprite
 onready var face_sprite = $FaceActivationSprite
 onready var insert_gem_sound = $InsertGemSound
+onready var totem_sound = $TotemTuneSound
 
 var gem:Gem = null
 
@@ -62,6 +72,20 @@ func _on_GemDetectionArea_area_entered(area):
 		# set the correct global pos after reparenting
 		self.gem.global_position = old_global_pos
 		
+func _get_song_position() -> float:
+	if self.totem_sound.stream != null:
+		return self.totem_sound.get_playback_position()
+	return 0.0
+		
 func _completely_woken_up():
 	# TODO select animation based on type
 	animation_player.play("SingingTotem" + ANIMATION_EXTENSIONS[type])
+	totem_sound.stream = TOTEM_SOUND_MAPPING[type]
+	totem_sound.play(_get_active_song_position())
+	emit_signal("completely_woken_up")
+	
+func _get_active_song_position() -> float:
+	for totem in get_tree().get_nodes_in_group("totems"):
+		if totem._get_song_position() > 0:
+			return totem._get_song_position()
+	return 0.0
