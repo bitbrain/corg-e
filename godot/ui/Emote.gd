@@ -19,7 +19,7 @@ func play(type):
 	self.visible = true
 	
 func _animation_complete():
-	tween.interpolate_property(self, "modulate:a", 1.0, 0.0, 1.0, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+	tween.interpolate_property(self, "modulate:a", 1.0, 0.0, 1.0, Tween.TRANS_CUBIC, Tween.EASE_OUT, 2.0)
 	tween.start()
 
 func _on_DeletionTween_tween_all_completed():

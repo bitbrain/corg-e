@@ -55,8 +55,8 @@ func _physics_process(delta):
 			sleeping = false
 			activation_line_sprite.visible = true
 			face_sprite.visible = true
-			insert_gem_sound.play()
-			# TODO select animation based on type
+			insert_gem_sound.play()	
+			totem_wakeup_sound.play()
 			animation_player.play("ActivateTotem" + ANIMATION_EXTENSIONS[type])
 		else:
 			gem.global_position = gem.global_position.move_toward(gem_slot_position, distance * delta)
@@ -80,8 +80,6 @@ func _get_song_position() -> float:
 	return 0.0
 		
 func _completely_woken_up():
-	# TODO select animation based on type
-	totem_wakeup_sound.play()
 	animation_player.play("SingingTotem" + ANIMATION_EXTENSIONS[type])
 	totem_sound.stream = TOTEM_SOUND_MAPPING[type]
 	totem_sound.volume_db = -60
