@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://maps/tileset/tileset_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://maps/background.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://gameloop/GameFinishedDetector.tscn" type="PackedScene" id=11]
 [ext_resource path="res://audio/VillageTotemChant.ogg" type="AudioStream" id=12]
 [ext_resource path="res://ui/GemUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://trees/Tree.tscn" type="PackedScene" id=14]
 
 [node name="MainWorld" type="Node2D"]
 script = ExtResource( 3 )
@@ -134,6 +135,83 @@ pause_mode = 2
 position = Vector2( -4.01834, -151.084 )
 totem_path = NodePath("../../Totems/SopranoTotem")
 type = 3
+
+[node name="Trees" type="YSort" parent="YSort"]
+
+[node name="Tree" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 880.614, -1093.8 )
+
+[node name="Tree2" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 1015.59, -935.232 )
+
+[node name="Tree3" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 1118.47, -1035.28 )
+
+[node name="Tree4" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 674.849, -296.229 )
+
+[node name="Tree5" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -1141.17, -231.102 )
+
+[node name="Tree6" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -910.86, -174.469 )
+
+[node name="Tree7" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -1027.9, -68.7553 )
+
+[node name="Tree8" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 826.813, 997.823 )
+
+[node name="Tree9" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 115.132, 1123.36 )
+
+[node name="Tree10" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 184.035, 859.073 )
+
+[node name="Tree11" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 453.983, 875.119 )
+
+[node name="Tree12" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -84.9697, 854.354 )
+
+[node name="Tree13" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 127.402, 607.059 )
+
+[node name="Tree14" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 1196.81, -501.05 )
+
+[node name="Tree15" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 941.966, -373.627 )
+
+[node name="Tree16" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 668.242, -505.769 )
+
+[node name="Tree17" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 522.894, -153.12 )
+
+[node name="Tree18" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 334.84, -272.309 )
+
+[node name="Tree19" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -119.14, 208.687 )
+
+[node name="Tree20" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -314.004, -5.11272 )
+
+[node name="Tree21" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -323.443, -178.786 )
+
+[node name="Tree22" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 235.331, -72.1279 )
+
+[node name="Tree23" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 157.933, 116.647 )
+
+[node name="Tree24" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( 134.336, -256.183 )
+
+[node name="Tree25" parent="YSort/Trees" instance=ExtResource( 14 )]
+position = Vector2( -94.0814, -281.668 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.447059, 0.415686, 0.796078, 1 )
