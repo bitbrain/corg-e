@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alien4-JoyE.ogg-4da86c222b34a997ca22df66858d489f.oggstr"
+
+[deps]
+
+source_file="res://audio/alien/Alien4-JoyE.ogg"
+dest_files=[ "res://.import/Alien4-JoyE.ogg-4da86c222b34a997ca22df66858d489f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

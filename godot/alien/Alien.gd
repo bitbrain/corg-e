@@ -26,8 +26,28 @@ onready var animation_player = $AnimationPlayer
 onready var light = $Light2D
 onready var emote = $Emote
 
+onready var HAPPY_SOUNDS = [
+	$BassHappySounds,
+	$TenorHappySounds,
+	$AltoHappySounds,
+	$SopranoHappySounds
+]
+
+onready var DISAPPOINTMENT_SOUNDS = [
+	$BassDisappointedSounds,
+	$TenorDissapointedSounds,
+	$AltoDisappointedSounds,
+	$SopranoDisappointedSounds
+]
+
+onready var SOUNDS = [
+	HAPPY_SOUNDS,
+	DISAPPOINTMENT_SOUNDS
+]
+
 var totem
 var entered_gems = []
+var cheered_up = false
 
 func _ready():
 	self.totem = get_node(totem_path)
@@ -38,16 +58,23 @@ func _ready():
 	light.color = Color(LIGHT_COLOURS[type])
 	
 func _on_totem_woken_up():
-	emote(Emote.Type.HAPPY)
+	$EmoteReactionTimer.start()
 	
 func emote(type):
+	var sounds = SOUNDS[type]
+	sounds[self.type].play()
 	emote.play(type)
 
 func _on_InteractionArea_area_entered(area):
-	if area is Gem and area.type != type and !entered_gems.has(area):
+	if area is Gem and area.type != type and !entered_gems.has(area) and !cheered_up:
 		emote(Emote.Type.DISAPPOINTED)
 		entered_gems.append(area as Gem)
 
 func _on_InteractionArea_area_exited(area):
 	if area is Gem and area.type != type:
 		entered_gems.erase(area as Gem)
+
+
+func _on_EmoteReactionTimer_timeout():
+	emote(Emote.Type.HAPPY)
+	cheered_up = true

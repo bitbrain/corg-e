@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alien3-DisappointA.ogg-c8177ef7118ff7ca8439e5074879d516.oggstr"
+
+[deps]
+
+source_file="res://audio/alien/Alien3-DisappointA.ogg"
+dest_files=[ "res://.import/Alien3-DisappointA.ogg-c8177ef7118ff7ca8439e5074879d516.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

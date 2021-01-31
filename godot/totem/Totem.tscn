@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://totem/totem.png" type="Texture" id=1]
 [ext_resource path="res://totem/Totem.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://totem/totem-soprano-singing.png" type="Texture" id=11]
 [ext_resource path="res://totem/totem-tenor-singing.png" type="Texture" id=12]
 [ext_resource path="res://audio/VillageTotemGemInsert.ogg" type="AudioStream" id=13]
+[ext_resource path="res://audio/VillageTotemChant.ogg" type="AudioStream" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
@@ -107,7 +108,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.6 ),
+"times": PoolRealArray( 2.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -197,7 +198,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.6 ),
+"times": PoolRealArray( 2.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -288,7 +289,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.6 ),
+"times": PoolRealArray( 2.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -379,7 +380,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.6 ),
+"times": PoolRealArray( 2.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -717,8 +718,9 @@ __meta__ = {
 [node name="ActivationLineSprite" type="Sprite" parent="YSort/Sprite"]
 visible = false
 material = SubResource( 1 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 hframes = 16
+frame = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111359, 1.00226 )
@@ -760,6 +762,7 @@ visible = false
 position = Vector2( 0, -46 )
 texture = ExtResource( 3 )
 hframes = 16
+frame = 12
 
 [node name="InsertGemSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
@@ -769,6 +772,10 @@ max_distance = 500.0
 [node name="TotemTuneSound" type="AudioStreamPlayer2D" parent="."]
 max_distance = 1000.0
 attenuation = 2.82843
+bus = "Ambient"
+
+[node name="TotemWakeupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
 bus = "Ambient"
 
 [node name="Tween" type="Tween" parent="."]

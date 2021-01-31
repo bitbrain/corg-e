@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/small-ui-font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://screens/StoryScreen.gd" type="Script" id=2]
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 65.0
+margin_top = 45.0
+margin_right = 265.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 200, 100 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.741176, 0.415686, 0.384314, 1 )
+text = "2505: Humanity starts mission to explore space. 
+
+utonomous research ships are sent into space, all equipped with an Explorer robot, called CORG-E. These robots are shot onto a planet’s surface, with the sole purpose to explore the planet and gather as much data as possible.
+
+Go little robot, fulfill your mission!"
+align = 1
+valign = 1
+autowrap = true

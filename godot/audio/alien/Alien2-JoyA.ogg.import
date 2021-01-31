@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alien2-JoyA.ogg-7f5d09dd01a7920bd6e3b1a5091186b9.oggstr"
+
+[deps]
+
+source_file="res://audio/alien/Alien2-JoyA.ogg"
+dest_files=[ "res://.import/Alien2-JoyA.ogg-7f5d09dd01a7920bd6e3b1a5091186b9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
