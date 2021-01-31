@@ -1,0 +1,165 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://corge-logo.png" type="Texture" id=1]
+[ext_resource path="res://ui/GameButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/small-ui-font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://alien/Alien.tscn" type="PackedScene" id=4]
+[ext_resource path="res://screens/TitleScreen.gd" type="Script" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 198, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 396, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 594, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 792, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 990, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 1188, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 1386, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 1584, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 1782, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 1980, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 2178, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 2376, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 2574, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 2772, 0, 198, 95 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 2970, 0, 198, 95 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 332.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Control" parent="VBoxContainer/CenterContainer"]
+margin_left = 68.0
+margin_right = 263.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 195, 90 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer/CenterContainer/Image"]
+frames = SubResource( 17 )
+frame = 2
+playing = true
+centered = false
+
+[node name="Alien" parent="VBoxContainer/CenterContainer/Image" instance=ExtResource( 4 )]
+position = Vector2( 116.294, 30.4931 )
+
+[node name="Buttons" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 94.0
+margin_right = 332.0
+margin_bottom = 114.0
+
+[node name="GameButton" parent="VBoxContainer/Buttons" instance=ExtResource( 2 )]
+margin_left = 117.0
+margin_right = 215.0
+
+[node name="Credits" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 118.0
+margin_right = 332.0
+margin_bottom = 184.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Credits"]
+margin_left = 84.0
+margin_right = 248.0
+margin_bottom = 66.0
+custom_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Credits/MarginContainer"]
+margin_top = 20.0
+margin_right = 164.0
+margin_bottom = 66.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Credits/MarginContainer/VBoxContainer"]
+margin_right = 164.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.298039, 0.317647, 0.458824, 1 )
+custom_constants/line_spacing = 0
+text = "code and art by bitbrain
+music by laslo jott
+sound design by modelay"
+align = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/Credits/MarginContainer/VBoxContainer"]
+margin_top = 37.0
+margin_right = 164.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.298039, 0.407843, 0.521569, 1 )
+text = "game built in 48 hours for Global Game Jam 2021"
+[connection signal="pressed" from="VBoxContainer/Buttons/GameButton" to="." method="_on_GameButton_pressed"]

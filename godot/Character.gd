@@ -38,6 +38,6 @@ func move_state(delta):
 		engine_sound.volume_db = clamp(engine_sound.volume_db, -50, -36)
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
-	engine_sound.pitch_scale = velocity.length() / 10
+	engine_sound.pitch_scale = max(0.1, abs(velocity.length() / 10))
 	animation_tree.set("parameters/Idle/blend_position", velocity.normalized())
 	animation_state.travel("Idle")
