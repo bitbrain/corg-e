@@ -40,9 +40,17 @@ onready var DISAPPOINTMENT_SOUNDS = [
 	$SopranoDisappointedSounds
 ]
 
+onready var SAD_SOUNDS = [
+	$BassDisappointedSounds,
+	$TenorDissapointedSounds,
+	$AltoDisappointedSounds,
+	$SopranoDisappointedSounds
+]
+
 onready var SOUNDS = [
 	HAPPY_SOUNDS,
-	DISAPPOINTMENT_SOUNDS
+	DISAPPOINTMENT_SOUNDS,
+	SAD_SOUNDS
 ]
 
 var totem
@@ -63,7 +71,7 @@ func _on_totem_woken_up():
 func emote(type):
 	var sounds = SOUNDS[type]
 	sounds[self.type].play()
-	emote.play(type)
+	emote.play(type, self.type)
 
 func _on_InteractionArea_area_entered(area):
 	if area is Gem and area.type != type and !entered_gems.has(area) and !cheered_up:
@@ -74,7 +82,11 @@ func _on_InteractionArea_area_exited(area):
 	if area is Gem and area.type != type:
 		entered_gems.erase(area as Gem)
 
-
 func _on_EmoteReactionTimer_timeout():
 	emote(Emote.Type.HAPPY)
 	cheered_up = true
+
+
+func _on_InteractionArea_body_entered(body):
+	if body is Robot and !cheered_up:
+		emote(Emote.Type.SAD)

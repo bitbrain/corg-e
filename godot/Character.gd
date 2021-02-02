@@ -1,4 +1,4 @@
-class_name Character
+class_name Robot
 extends KinematicBody2D
 
 export var ACCELERATION = 500

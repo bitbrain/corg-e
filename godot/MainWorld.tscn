@@ -97,7 +97,7 @@ position = Vector2( -19.0579, 524.061 )
 gem_name = "Nujo's Gem"
 
 [node name="TenorGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( -99.3405, -879.375 )
+position = Vector2( -86.7413, -663.928 )
 gem_name = "Mogo's Gem"
 type = 1
 
