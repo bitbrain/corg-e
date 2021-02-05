@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://robot/robot.png" type="Texture" id=1]
-[ext_resource path="res://Character.gd" type="Script" id=2]
+[ext_resource path="res://robot/Robot.gd" type="Script" id=2]
 [ext_resource path="res://audio/RobotMoveLoopGrass.ogg" type="AudioStream" id=3]
 [ext_resource path="res://lighting/light.png" type="Texture" id=4]
 
@@ -120,7 +120,7 @@ position = Vector2( 0, -4.75713 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 1 )
 hframes = 16
-frame = 13
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
