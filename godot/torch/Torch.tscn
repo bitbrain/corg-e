@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://torch/torch.png" type="Texture" id=1]
+[ext_resource path="res://torch/VillageTorchLoop.ogg" type="AudioStream" id=2]
+[ext_resource path="res://lighting/light.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 224, 0, 32, 64 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 4.59425
+height = 15.4368
+
+[node name="Torch" type="StaticBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -22.2388 )
+frames = SubResource( 9 )
+frame = 6
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.210464, 0.771694 )
+rotation = -1.5708
+shape = SubResource( 10 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+autoplay = true
+max_distance = 200.0
+bus = "Ambient"
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.576443, 0.576443 )
+texture = ExtResource( 3 )
+color = Color( 1, 0.564706, 0.301961, 1 )

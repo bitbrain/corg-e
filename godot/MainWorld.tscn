@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://maps/tileset/tileset_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://maps/background.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://alien/Alien.tscn" type="PackedScene" id=4]
 [ext_resource path="res://totem/Totem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://robot/Robot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://lighting/light.png" type="Texture" id=7]
+[ext_resource path="res://torch/Torch.tscn" type="PackedScene" id=7]
 [ext_resource path="res://hut/Hut.tscn" type="PackedScene" id=8]
 [ext_resource path="res://gems/Gem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://audio/SwampAmbience.ogg" type="AudioStream" id=10]
@@ -14,6 +14,7 @@
 [ext_resource path="res://audio/VillageTotemChant.ogg" type="AudioStream" id=12]
 [ext_resource path="res://ui/GemUI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://trees/Tree.tscn" type="PackedScene" id=14]
+[ext_resource path="res://temple/Temple.tscn" type="PackedScene" id=15]
 
 [node name="MainWorld" type="Node2D"]
 script = ExtResource( 3 )
@@ -102,7 +103,7 @@ gem_name = "Mogo's Gem"
 type = 1
 
 [node name="AltoGem" parent="YSort/Gems" instance=ExtResource( 9 )]
-position = Vector2( 754.523, -445.196 )
+position = Vector2( 641.331, -447.125 )
 gem_name = "Landor's Gem"
 type = 2
 
@@ -139,16 +140,16 @@ type = 3
 [node name="Trees" type="YSort" parent="YSort"]
 
 [node name="Tree" parent="YSort/Trees" instance=ExtResource( 14 )]
-position = Vector2( 683.061, -356.345 )
+position = Vector2( 795.061, -272.095 )
 
 [node name="Tree2" parent="YSort/Trees" instance=ExtResource( 14 )]
-position = Vector2( 830.381, -350.429 )
+position = Vector2( 480.881, -384.179 )
 
 [node name="Tree3" parent="YSort/Trees" instance=ExtResource( 14 )]
 position = Vector2( 795.201, -521.195 )
 
 [node name="Tree4" parent="YSort/Trees" instance=ExtResource( 14 )]
-position = Vector2( 633.318, -152.554 )
+position = Vector2( 553.318, -205.304 )
 
 [node name="Tree5" parent="YSort/Trees" instance=ExtResource( 14 )]
 position = Vector2( -1141.17, -231.102 )
@@ -187,7 +188,7 @@ position = Vector2( 77.3961, 222.134 )
 position = Vector2( 668.242, -505.769 )
 
 [node name="Tree17" parent="YSort/Trees" instance=ExtResource( 14 )]
-position = Vector2( 522.894, -153.12 )
+position = Vector2( 721.144, -187.12 )
 
 [node name="Tree18" parent="YSort/Trees" instance=ExtResource( 14 )]
 position = Vector2( 334.84, -272.309 )
@@ -213,26 +214,36 @@ position = Vector2( 134.336, -256.183 )
 [node name="Tree25" parent="YSort/Trees" instance=ExtResource( 14 )]
 position = Vector2( -164.828, -322.381 )
 
+[node name="Temples" type="YSort" parent="YSort"]
+
+[node name="Temple" parent="YSort/Temples" instance=ExtResource( 15 )]
+position = Vector2( 642.096, -458.688 )
+
+[node name="Torches" type="YSort" parent="YSort"]
+
+[node name="Torch" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( 590.242, -250.168 )
+
+[node name="Torch2" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( 693.957, -251.133 )
+
+[node name="Torch3" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( 92.8788, -115.628 )
+
+[node name="Torch4" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( -9.69031, -115.776 )
+
+[node name="Torch5" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( -139.463, -162.453 )
+
+[node name="Torch6" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( -243.964, -163.642 )
+
+[node name="Torch7" parent="YSort/Torches" instance=ExtResource( 7 )]
+position = Vector2( -193.72, -26.7344 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.447059, 0.415686, 0.796078, 1 )
-
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 98.2719, -125.341 )
-scale = Vector2( 0.636624, 0.607696 )
-texture = ExtResource( 7 )
-mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( -5.0258, -127.99 )
-scale = Vector2( 0.636624, 0.607696 )
-texture = ExtResource( 7 )
-mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
